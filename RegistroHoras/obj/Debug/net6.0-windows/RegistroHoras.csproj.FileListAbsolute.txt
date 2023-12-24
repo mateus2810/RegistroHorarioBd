@@ -1,0 +1,17 @@
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\bin\Debug\net6.0-windows\RegistroHoras.exe
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\bin\Debug\net6.0-windows\RegistroHoras.deps.json
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\bin\Debug\net6.0-windows\RegistroHoras.runtimeconfig.json
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\bin\Debug\net6.0-windows\RegistroHoras.dll
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\bin\Debug\net6.0-windows\RegistroHoras.pdb
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.csproj.AssemblyReference.cache
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.Form1.resources
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.csproj.GenerateResource.cache
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.AssemblyInfoInputs.cache
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.AssemblyInfo.cs
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.csproj.CoreCompileInputs.cache
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.dll
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\refint\RegistroHoras.dll
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.pdb
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\RegistroHoras.genruntimeconfig.cache
+C:\Users\mateu\OneDrive\Área de Trabalho\Utilitarios\projetos\RegistroHorarioBd\RegistroHoras\obj\Debug\net6.0-windows\ref\RegistroHoras.dll

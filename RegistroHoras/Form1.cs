@@ -44,7 +44,7 @@ namespace RegistroHoras
             TimeSpan totalHoras = horaFim - horaInicio;
 
 
-            string insertQuery = "INSERT INTO RegistroHorario " +
+            string insertQuery = "INSERT INTO RegistroHorario" +
                 "(demandaRealizada, horarioInicio, horarioFim, totalHoras) " +
                 "VALUES " +
                 "(@demandaRealizada, @horarioInicio, @horarioFim, @totalHoras)";
@@ -54,7 +54,7 @@ namespace RegistroHoras
                 cmd.Parameters.AddWithValue("@horarioInicio", horaInicio);
                 cmd.Parameters.AddWithValue("@horarioFim", horaFim);
                 cmd.Parameters.AddWithValue("@totalHoras", totalHoras);
-                cmd.Parameters.AddWithValue("@demandaRealizada", demandaRealizada.Text);
+                cmd.Parameters.AddWithValue("@demandaRealizada", textBoxDemanda.Text);
                 cmd.ExecuteNonQuery();
             }
 

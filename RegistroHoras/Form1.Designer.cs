@@ -39,24 +39,25 @@
             // 
             // horarioInicio
             // 
-            this.horarioInicio.CustomFormat = "dd-MM-yyyy HH:mm:ss";
+            this.horarioInicio.CustomFormat = "dd-MM-yyyy HH:mm";
             this.horarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.horarioInicio.Location = new System.Drawing.Point(321, 180);
             this.horarioInicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.horarioInicio.Name = "horarioInicio";
             this.horarioInicio.Size = new System.Drawing.Size(228, 27);
             this.horarioInicio.TabIndex = 0;
+            this.horarioInicio.Value = new System.DateTime(2023, 12, 28, 11, 17, 39, 0);
             // 
             // horarioFim
             // 
-            this.horarioFim.CustomFormat = "dd-MM-yyyy HH:mm:ss";
+            this.horarioFim.CustomFormat = "dd-MM-yyyy HH:mm";
             this.horarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.horarioFim.Location = new System.Drawing.Point(321, 240);
             this.horarioFim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.horarioFim.Name = "horarioFim";
             this.horarioFim.Size = new System.Drawing.Size(228, 27);
             this.horarioFim.TabIndex = 1;
-            this.horarioFim.Value = new System.DateTime(2023, 12, 28, 0, 0, 0, 0);
+            this.horarioFim.Value = new System.DateTime(2023, 12, 28, 11, 17, 46, 0);
             // 
             // Inicio
             // 
@@ -103,7 +104,7 @@
             this.textBoxDemanda.Name = "textBoxDemanda";
             this.textBoxDemanda.Size = new System.Drawing.Size(185, 27);
             this.textBoxDemanda.TabIndex = 6;
-            this.textBoxDemanda.Text = "\r\n";
+            this.textBoxDemanda.Text = "\r\n--";
             // 
             // Form1
             // 

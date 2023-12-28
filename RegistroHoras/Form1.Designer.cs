@@ -28,45 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.horarioInicio = new System.Windows.Forms.DateTimePicker();
+            this.horarioFim = new System.Windows.Forms.DateTimePicker();
+            this.Inicio = new System.Windows.Forms.Label();
+            this.Fim = new System.Windows.Forms.Label();
+            this.Salvar = new System.Windows.Forms.Button();
+            this.demandaRealizada = new System.Windows.Forms.Label();
+            this.textBoxDemanda = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // horarioInicio
             // 
-            this.dateTimePicker1.CustomFormat = "hh:mm";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(281, 129);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 0;
+            this.horarioInicio.CustomFormat = "dd-MM-yyyy HH:mm:ss";
+            this.horarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.horarioInicio.Location = new System.Drawing.Point(321, 180);
+            this.horarioInicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.horarioInicio.Name = "horarioInicio";
+            this.horarioInicio.Size = new System.Drawing.Size(228, 27);
+            this.horarioInicio.TabIndex = 0;
             // 
-            // dateTimePicker2
+            // horarioFim
             // 
-            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy HH:mm:ss";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(281, 191);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 1;
-            this.dateTimePicker2.Value = new System.DateTime(2023, 12, 24, 16, 36, 0, 0);
+            this.horarioFim.CustomFormat = "dd-MM-yyyy HH:mm:ss";
+            this.horarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.horarioFim.Location = new System.Drawing.Point(321, 240);
+            this.horarioFim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.horarioFim.Name = "horarioFim";
+            this.horarioFim.Size = new System.Drawing.Size(228, 27);
+            this.horarioFim.TabIndex = 1;
+            this.horarioFim.Value = new System.DateTime(2023, 12, 28, 0, 0, 0, 0);
+            // 
+            // Inicio
+            // 
+            this.Inicio.AutoSize = true;
+            this.Inicio.Location = new System.Drawing.Point(233, 180);
+            this.Inicio.Name = "Inicio";
+            this.Inicio.Size = new System.Drawing.Size(45, 20);
+            this.Inicio.TabIndex = 2;
+            this.Inicio.Text = "Inicio";
+            // 
+            // Fim
+            // 
+            this.Fim.AutoSize = true;
+            this.Fim.Location = new System.Drawing.Point(243, 248);
+            this.Fim.Name = "Fim";
+            this.Fim.Size = new System.Drawing.Size(33, 20);
+            this.Fim.TabIndex = 3;
+            this.Fim.Text = "Fim";
+            // 
+            // Salvar
+            // 
+            this.Salvar.Location = new System.Drawing.Point(509, 355);
+            this.Salvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Salvar.Name = "Salvar";
+            this.Salvar.Size = new System.Drawing.Size(86, 31);
+            this.Salvar.TabIndex = 4;
+            this.Salvar.Text = "Salvar";
+            this.Salvar.UseVisualStyleBackColor = true;
+            this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
+            // 
+            // demandaRealizada
+            // 
+            this.demandaRealizada.AutoSize = true;
+            this.demandaRealizada.Location = new System.Drawing.Point(149, 108);
+            this.demandaRealizada.Name = "demandaRealizada";
+            this.demandaRealizada.Size = new System.Drawing.Size(143, 20);
+            this.demandaRealizada.TabIndex = 5;
+            this.demandaRealizada.Text = "Demanda Realizada";
+            // 
+            // textBoxDemanda
+            // 
+            this.textBoxDemanda.Location = new System.Drawing.Point(321, 104);
+            this.textBoxDemanda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxDemanda.Name = "textBoxDemanda";
+            this.textBoxDemanda.Size = new System.Drawing.Size(185, 27);
+            this.textBoxDemanda.TabIndex = 6;
+            this.textBoxDemanda.Text = "\r\n";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.textBoxDemanda);
+            this.Controls.Add(this.demandaRealizada);
+            this.Controls.Add(this.Salvar);
+            this.Controls.Add(this.Fim);
+            this.Controls.Add(this.Inicio);
+            this.Controls.Add(this.horarioFim);
+            this.Controls.Add(this.horarioInicio);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker horarioInicio;
+        private DateTimePicker horarioFim;
+        private Label Inicio;
+        private Label Fim;
+        private Button Salvar;
+        private Label demandaRealizada;
+        private TextBox textBoxDemanda;
     }
 }

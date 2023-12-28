@@ -9,6 +9,7 @@ namespace RegistroHoras
         {
             InitializeComponent();
             InicializarBD();
+            CarregarDadosRegistroHorario();
         }
 
 
@@ -60,6 +61,24 @@ namespace RegistroHoras
 
 
             MessageBox.Show("Dados salvos com sucesso!");
+        }
+
+        private void CarregarDadosRegistroHorario()
+        {
+            //demandaRealizada, horarioInicio, horarioFim, totalHoras
+            using (var cmd = new SqliteCommand("SELECT * FROM RegistroHorario", connection))
+            {
+                using (SqliteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // Exiba os dados em uma DataGridView, ListBox, ou qualquer outro controle de exibição que você preferir.
+                        // Por exemplo, se você tem uma DataGridView chamada dataGridView1:
+                        dataGridView1.Rows.Add(
+                            reader["demandaRealizada"], reader["horarioInicio"], reader["horarioFim"], reader["totalHoras"]);
+                    }
+                }
+            }
         }
     }
 }

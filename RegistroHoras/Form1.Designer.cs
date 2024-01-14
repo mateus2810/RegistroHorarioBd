@@ -40,6 +40,8 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.totalHorasDia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,10 +49,9 @@
             // 
             this.horarioInicio.CustomFormat = "dd-MM-yyyy HH:mm";
             this.horarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.horarioInicio.Location = new System.Drawing.Point(185, 104);
-            this.horarioInicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.horarioInicio.Location = new System.Drawing.Point(162, 78);
             this.horarioInicio.Name = "horarioInicio";
-            this.horarioInicio.Size = new System.Drawing.Size(228, 27);
+            this.horarioInicio.Size = new System.Drawing.Size(200, 23);
             this.horarioInicio.TabIndex = 0;
             this.horarioInicio.Value = new System.DateTime(2023, 12, 28, 11, 17, 39, 0);
             // 
@@ -58,37 +59,35 @@
             // 
             this.horarioFim.CustomFormat = "dd-MM-yyyy HH:mm";
             this.horarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.horarioFim.Location = new System.Drawing.Point(185, 139);
-            this.horarioFim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.horarioFim.Location = new System.Drawing.Point(162, 104);
             this.horarioFim.Name = "horarioFim";
-            this.horarioFim.Size = new System.Drawing.Size(228, 27);
+            this.horarioFim.Size = new System.Drawing.Size(200, 23);
             this.horarioFim.TabIndex = 1;
             this.horarioFim.Value = new System.DateTime(2023, 12, 28, 11, 17, 46, 0);
             // 
             // Inicio
             // 
             this.Inicio.AutoSize = true;
-            this.Inicio.Location = new System.Drawing.Point(124, 109);
+            this.Inicio.Location = new System.Drawing.Point(108, 82);
             this.Inicio.Name = "Inicio";
-            this.Inicio.Size = new System.Drawing.Size(45, 20);
+            this.Inicio.Size = new System.Drawing.Size(36, 15);
             this.Inicio.TabIndex = 2;
             this.Inicio.Text = "Inicio";
             // 
             // Fim
             // 
             this.Fim.AutoSize = true;
-            this.Fim.Location = new System.Drawing.Point(136, 144);
+            this.Fim.Location = new System.Drawing.Point(119, 108);
             this.Fim.Name = "Fim";
-            this.Fim.Size = new System.Drawing.Size(33, 20);
+            this.Fim.Size = new System.Drawing.Size(27, 15);
             this.Fim.TabIndex = 3;
             this.Fim.Text = "Fim";
             // 
             // Salvar
             // 
-            this.Salvar.Location = new System.Drawing.Point(327, 198);
-            this.Salvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Salvar.Location = new System.Drawing.Point(286, 148);
             this.Salvar.Name = "Salvar";
-            this.Salvar.Size = new System.Drawing.Size(86, 31);
+            this.Salvar.Size = new System.Drawing.Size(75, 23);
             this.Salvar.TabIndex = 4;
             this.Salvar.Text = "Salvar";
             this.Salvar.UseVisualStyleBackColor = true;
@@ -97,18 +96,17 @@
             // demandaRealizada
             // 
             this.demandaRealizada.AutoSize = true;
-            this.demandaRealizada.Location = new System.Drawing.Point(26, 65);
+            this.demandaRealizada.Location = new System.Drawing.Point(23, 49);
             this.demandaRealizada.Name = "demandaRealizada";
-            this.demandaRealizada.Size = new System.Drawing.Size(143, 20);
+            this.demandaRealizada.Size = new System.Drawing.Size(110, 15);
             this.demandaRealizada.TabIndex = 5;
             this.demandaRealizada.Text = "Demanda Realizada";
             // 
             // textBoxDemanda
             // 
-            this.textBoxDemanda.Location = new System.Drawing.Point(185, 58);
-            this.textBoxDemanda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxDemanda.Location = new System.Drawing.Point(162, 44);
             this.textBoxDemanda.Name = "textBoxDemanda";
-            this.textBoxDemanda.Size = new System.Drawing.Size(228, 27);
+            this.textBoxDemanda.Size = new System.Drawing.Size(200, 23);
             this.textBoxDemanda.TabIndex = 6;
             this.textBoxDemanda.Text = "\r\n--";
             // 
@@ -120,11 +118,12 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.TotalHoras});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 277);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 208);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(766, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(692, 191);
             this.dataGridView1.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
@@ -155,11 +154,33 @@
             this.TotalHoras.Name = "TotalHoras";
             this.TotalHoras.Width = 125;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(721, 208);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Total horas dia:";
+            // 
+            // totalHorasDia
+            // 
+            this.totalHorasDia.AutoSize = true;
+            this.totalHorasDia.Location = new System.Drawing.Point(831, 208);
+            this.totalHorasDia.Name = "totalHorasDia";
+            this.totalHorasDia.Size = new System.Drawing.Size(17, 15);
+            this.totalHorasDia.TabIndex = 9;
+            this.totalHorasDia.Text = "--";
+            this.totalHorasDia.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.totalHorasDia.Click += new System.EventHandler(this.totalHorasDia_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 600);
+            this.ClientSize = new System.Drawing.Size(1004, 450);
+            this.Controls.Add(this.totalHorasDia);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBoxDemanda);
             this.Controls.Add(this.demandaRealizada);
@@ -168,7 +189,6 @@
             this.Controls.Add(this.Inicio);
             this.Controls.Add(this.horarioFim);
             this.Controls.Add(this.horarioInicio);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -191,5 +211,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn TotalHoras;
+        private Label label1;
+        private Label totalHorasDia;
     }
 }

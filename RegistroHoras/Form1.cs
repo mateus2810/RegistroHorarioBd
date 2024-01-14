@@ -33,8 +33,6 @@ namespace RegistroHoras
             {
                 cmd.ExecuteNonQuery();
             }
-
-
         }
         private void Salvar_Click(object sender, EventArgs e)
         {
@@ -59,12 +57,15 @@ namespace RegistroHoras
                 cmd.ExecuteNonQuery();
             }
 
-
             MessageBox.Show("Dados salvos com sucesso!");
+            
+            //carregar informações na tela
+            CarregarDadosRegistroHorario();
         }
 
         private void CarregarDadosRegistroHorario()
         {
+
             //demandaRealizada, horarioInicio, horarioFim, totalHoras
             using (var cmd = new SqliteCommand("SELECT * FROM RegistroHorario", connection))
             {
@@ -72,6 +73,9 @@ namespace RegistroHoras
                 {
                     while (reader.Read())
                     {
+                        VerificarTotaisHorario(reader);
+
+
                         // Exiba os dados em uma DataGridView, ListBox, ou qualquer outro controle de exibição que você preferir.
                         // Por exemplo, se você tem uma DataGridView chamada dataGridView1:
                         dataGridView1.Rows.Add(
@@ -79,6 +83,27 @@ namespace RegistroHoras
                     }
                 }
             }
+        }
+
+
+        private void VerificarTotaisHorario(SqliteDataReader reader)
+        {
+            var dataDia = Convert.ToDateTime(reader["horarioInicio"]);
+
+            // Obtendo apenas ano, mês e dia
+            var anoMesDia = dataDia.ToString("yyyy-MM-dd");
+
+            //os valores de anoMesDia são iguais somar o totais entre eles
+            if(true)
+            {
+
+            }
+
+        }
+
+        private void totalHorasDia_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

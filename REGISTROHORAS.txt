@@ -1,0 +1,5 @@
+REGISTROHORAS
+
+-atualizar listagem
+-total por dia
+-excluir registro quando desejar

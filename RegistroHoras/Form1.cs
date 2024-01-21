@@ -127,5 +127,31 @@ namespace RegistroHoras
         {
             dataGridView1.Rows.Clear();
         }
+
+        //Deletar horario indesejado
+        public void DeleteHorario(DateTime horarioSelecionado)
+        {
+            var valorSelecionado = dataGridView1.SelectedRows;
+
+            using (var cmd = new SqliteCommand("" +
+                "DELETE FROM RegistroHorario " +
+                "WHERE horarioInicio = @horarioInicio " +
+                "AND horarioFim = @horarioFim", connection))
+            {
+                cmd.Parameters.AddWithValue("@horarioInicio", horarioInicio);
+                cmd.Parameters.AddWithValue("@horarioFim", horarioFim);
+
+                using (SqliteDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // Exiba os dados em uma DataGridView, ListBox, ou qualquer outro controle de exibição que você preferir.
+                        // Por exemplo, se você tem uma DataGridView chamada dataGridView1:
+                        dataGridView1.Rows.Add(
+                            reader["demandaRealizada"], reader["horarioInicio"], reader["horarioFim"], reader["totalHoras"]);
+                    }
+                }
+            }
+        }
     }
 }

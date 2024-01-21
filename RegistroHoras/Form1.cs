@@ -17,8 +17,16 @@ namespace RegistroHoras
 
         public void InicializarBD()
         {
-            string dataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            // Obtenha o diretório base do aplicativo (onde o executável está localizado)
+            string diretorioBase = AppDomain.CurrentDomain.BaseDirectory;
 
+            // Adicione as pastas ao caminho do banco de dados
+            string nomeDoArquivo = "MeuBancoDeDados.db";
+            string caminhoDoBancoDeDados = Path.Combine(diretorioBase, "projetos", nomeDoArquivo);
+
+
+
+            //RETIRAR INFORMAÇÃO
             string databasePath = "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\Utilitarios\\projetos\\RegistroHorarioBd\\MeuBancoDeDados.db";
             string connectionString = $"Data Source={databasePath}";
 
@@ -60,6 +68,9 @@ namespace RegistroHoras
             }
 
             MessageBox.Show("Dados salvos com sucesso!");
+
+            //Trazer listagem na tela
+            listarButton_Click(new object { }, new EventArgs());
         }
 
         private void CarregarDadosRegistroHorario(DateTime dataDePesquisa)
@@ -151,8 +162,9 @@ namespace RegistroHoras
                 //Buscar novamente a listagem
             }
 
+            object obj = new object { };
             //Trazer novamente a listagem
-            //listarButton_Click();
+            listarButton_Click(new object { }, new EventArgs());
 
         }
     }

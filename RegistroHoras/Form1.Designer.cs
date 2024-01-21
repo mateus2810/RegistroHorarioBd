@@ -36,15 +36,15 @@
             this.demandaRealizada = new System.Windows.Forms.Label();
             this.textBoxDemanda = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaInicioTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horaFimTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.totalHorasDiaLabel = new System.Windows.Forms.Label();
             this.dataListagemDatePicker = new System.Windows.Forms.DateTimePicker();
             this.listarButton = new System.Windows.Forms.Button();
             this.DeletarButton = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaInicioTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaFimTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.horarioInicio.Name = "horarioInicio";
             this.horarioInicio.Size = new System.Drawing.Size(228, 27);
             this.horarioInicio.TabIndex = 0;
-            this.horarioInicio.Value = new System.DateTime(2023, 12, 28, 11, 17, 39, 0);
+            this.horarioInicio.Value = new System.DateTime(2024, 1, 21, 0, 0, 0, 0);
             // 
             // horarioFim
             // 
@@ -68,7 +68,7 @@
             this.horarioFim.Name = "horarioFim";
             this.horarioFim.Size = new System.Drawing.Size(228, 27);
             this.horarioFim.TabIndex = 1;
-            this.horarioFim.Value = new System.DateTime(2023, 12, 28, 11, 17, 46, 0);
+            this.horarioFim.Value = new System.DateTime(2024, 1, 21, 0, 0, 0, 0);
             // 
             // Inicio
             // 
@@ -129,8 +129,36 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(791, 255);
+            this.dataGridView1.Size = new System.Drawing.Size(768, 257);
             this.dataGridView1.TabIndex = 7;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Demanda Realizada";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 250;
+            // 
+            // horaInicioTextBoxColumn
+            // 
+            this.horaInicioTextBoxColumn.HeaderText = "Horario Inicio";
+            this.horaInicioTextBoxColumn.MinimumWidth = 6;
+            this.horaInicioTextBoxColumn.Name = "horaInicioTextBoxColumn";
+            this.horaInicioTextBoxColumn.Width = 170;
+            // 
+            // horaFimTextBoxColumn
+            // 
+            this.horaFimTextBoxColumn.HeaderText = "Horario Fim";
+            this.horaFimTextBoxColumn.MinimumWidth = 6;
+            this.horaFimTextBoxColumn.Name = "horaFimTextBoxColumn";
+            this.horaFimTextBoxColumn.Width = 170;
+            // 
+            // TotalHoras
+            // 
+            this.TotalHoras.HeaderText = "Total de Horas";
+            this.TotalHoras.MinimumWidth = 6;
+            this.TotalHoras.Name = "TotalHoras";
+            this.TotalHoras.Width = 125;
             // 
             // label1
             // 
@@ -161,6 +189,7 @@
             this.dataListagemDatePicker.Name = "dataListagemDatePicker";
             this.dataListagemDatePicker.Size = new System.Drawing.Size(228, 27);
             this.dataListagemDatePicker.TabIndex = 10;
+            this.dataListagemDatePicker.Value = new System.DateTime(2024, 1, 21, 18, 24, 44, 0);
             // 
             // listarButton
             // 
@@ -175,41 +204,13 @@
             // 
             // DeletarButton
             // 
-            this.DeletarButton.Location = new System.Drawing.Point(854, 166);
+            this.DeletarButton.Location = new System.Drawing.Point(400, 265);
             this.DeletarButton.Name = "DeletarButton";
             this.DeletarButton.Size = new System.Drawing.Size(94, 29);
             this.DeletarButton.TabIndex = 12;
             this.DeletarButton.Text = "Deletar";
             this.DeletarButton.UseVisualStyleBackColor = true;
             this.DeletarButton.Click += new System.EventHandler(this.DeletarButton_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Demanda Realizada";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 250;
-            // 
-            // horaInicioTextBoxColumn
-            // 
-            this.horaInicioTextBoxColumn.HeaderText = "Horario Inicio";
-            this.horaInicioTextBoxColumn.MinimumWidth = 6;
-            this.horaInicioTextBoxColumn.Name = "horaInicioTextBoxColumn";
-            this.horaInicioTextBoxColumn.Width = 170;
-            // 
-            // horaFimTextBoxColumn
-            // 
-            this.horaFimTextBoxColumn.HeaderText = "Horario Fim";
-            this.horaFimTextBoxColumn.MinimumWidth = 6;
-            this.horaFimTextBoxColumn.Name = "horaFimTextBoxColumn";
-            this.horaFimTextBoxColumn.Width = 170;
-            // 
-            // TotalHoras
-            // 
-            this.TotalHoras.HeaderText = "Total de Horas";
-            this.TotalHoras.MinimumWidth = 6;
-            this.TotalHoras.Name = "TotalHoras";
-            this.TotalHoras.Width = 125;
             // 
             // Form1
             // 

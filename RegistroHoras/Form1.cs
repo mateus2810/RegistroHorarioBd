@@ -5,6 +5,7 @@ namespace RegistroHoras
     public partial class Form1 : Form
     {
         private SqliteConnection connection;
+        TimeSpan totalHorasMinutosSomadas = TimeSpan.Zero;
         public Form1()
         {
             InitializeComponent();
@@ -66,10 +67,12 @@ namespace RegistroHoras
         private void CarregarDadosRegistroHorario()
         {
 
-            var totalHoras = DateTime.Now;  // Variável para armazenar o total de horas
+            TimeSpan totalHoras = TimeSpan.Zero;  // Variável para armazenar o total de horas
 
-            using (var cmd = new SqliteCommand("SELECT * FROM RegistroHorario", connection))
+            using (var cmd = new SqliteCommand("SELECT * FROM RegistroHorario where Date(horarioInicio) = @horarioInicio", connection))
             {
+                cmd.Parameters.AddWithValue("@horarioInicio", DateTime.Now.ToString("yyyy-MM-dd"));
+
                 using (SqliteDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -79,18 +82,26 @@ namespace RegistroHoras
                         dataGridView1.Rows.Add(
                             reader["demandaRealizada"], reader["horarioInicio"], reader["horarioFim"], reader["totalHoras"]);
 
-                        totalHoras = Convert.ToDateTime(reader["totalHoras"]);
 
-                        // Adiciona a totalHoras o valor da coluna "totalHoras" convertido para TimeSpan
-                        totalHoras += TimeSpan.Parse(reader["totalHoras"].ToString());
+                        //FUNCAO SOMAR TODOS OS TOTAIS DE HORA DAQUELE DIA
+                        totalHoras = SomarTotalHoras(reader["totalHoras"]);
 
                     }
                 }
             }
 
-            totalHorasDiaLabel.Text = totalHoras.ToString("HH:mm");
+            totalHorasDiaLabel.Text = totalHoras.ToString();
         }
 
+        public TimeSpan SomarTotalHoras(object totalHorasObject)
+        {
+            
+            var totalHorasDateTime = Convert.ToDateTime(totalHorasObject);
+            //transformar em horas e minutos
+            totalHorasMinutosSomadas += totalHorasDateTime.TimeOfDay;
+
+            return totalHorasMinutosSomadas;
+        }
 
         private void VerificarTotaisHorario(SqliteDataReader reader)
         {

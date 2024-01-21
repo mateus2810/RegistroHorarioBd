@@ -66,38 +66,36 @@ namespace RegistroHoras
         private void CarregarDadosRegistroHorario()
         {
 
-            //demandaRealizada, horarioInicio, horarioFim, totalHoras
+            var totalHoras = DateTime.Now;  // Variável para armazenar o total de horas
+
             using (var cmd = new SqliteCommand("SELECT * FROM RegistroHorario", connection))
             {
                 using (SqliteDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        VerificarTotaisHorario(reader);
-
-
                         // Exiba os dados em uma DataGridView, ListBox, ou qualquer outro controle de exibição que você preferir.
                         // Por exemplo, se você tem uma DataGridView chamada dataGridView1:
                         dataGridView1.Rows.Add(
                             reader["demandaRealizada"], reader["horarioInicio"], reader["horarioFim"], reader["totalHoras"]);
+
+                        totalHoras = Convert.ToDateTime(reader["totalHoras"]);
+
+                        // Adiciona a totalHoras o valor da coluna "totalHoras" convertido para TimeSpan
+                        totalHoras += TimeSpan.Parse(reader["totalHoras"].ToString());
+
                     }
                 }
             }
+
+            totalHorasDiaLabel.Text = totalHoras.ToString("HH:mm");
         }
 
 
         private void VerificarTotaisHorario(SqliteDataReader reader)
         {
             var dataDia = Convert.ToDateTime(reader["horarioInicio"]);
-
-            // Obtendo apenas ano, mês e dia
-            var anoMesDia = dataDia.ToString("yyyy-MM-dd");
-
-            //os valores de anoMesDia são iguais somar o totais entre eles
-            if(true)
-            {
-
-            }
+            
 
         }
 

@@ -41,7 +41,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.totalHorasDia = new System.Windows.Forms.Label();
+            this.totalHorasDiaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,23 +163,23 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Total horas dia:";
             // 
-            // totalHorasDia
+            // totalHorasDiaLabel
             // 
-            this.totalHorasDia.AutoSize = true;
-            this.totalHorasDia.Location = new System.Drawing.Point(831, 208);
-            this.totalHorasDia.Name = "totalHorasDia";
-            this.totalHorasDia.Size = new System.Drawing.Size(17, 15);
-            this.totalHorasDia.TabIndex = 9;
-            this.totalHorasDia.Text = "--";
-            this.totalHorasDia.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.totalHorasDia.Click += new System.EventHandler(this.totalHorasDia_Click);
+            this.totalHorasDiaLabel.AutoSize = true;
+            this.totalHorasDiaLabel.Location = new System.Drawing.Point(831, 208);
+            this.totalHorasDiaLabel.Name = "totalHorasDiaLabel";
+            this.totalHorasDiaLabel.Size = new System.Drawing.Size(17, 15);
+            this.totalHorasDiaLabel.TabIndex = 9;
+            this.totalHorasDiaLabel.Text = "--";
+            this.totalHorasDiaLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.totalHorasDiaLabel.Click += new System.EventHandler(this.totalHorasDia_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 450);
-            this.Controls.Add(this.totalHorasDia);
+            this.Controls.Add(this.totalHorasDiaLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBoxDemanda);
@@ -212,6 +212,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn TotalHoras;
         private Label label1;
-        private Label totalHorasDia;
+        private Label totalHorasDiaLabel;
     }
 }

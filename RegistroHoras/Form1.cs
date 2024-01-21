@@ -22,13 +22,9 @@ namespace RegistroHoras
 
             // Adicione as pastas ao caminho do banco de dados
             string nomeDoArquivo = "MeuBancoDeDados.db";
-            string caminhoDoBancoDeDados = Path.Combine(diretorioBase, "projetos", nomeDoArquivo);
+            string caminhoDoBancoDeDados = Path.Combine(diretorioBase, nomeDoArquivo);
 
-
-
-            //RETIRAR INFORMAÇÃO
-            string databasePath = "C:\\Users\\mateu\\OneDrive\\Área de Trabalho\\Utilitarios\\projetos\\RegistroHorarioBd\\MeuBancoDeDados.db";
-            string connectionString = $"Data Source={databasePath}";
+            string connectionString = $"Data Source={caminhoDoBancoDeDados}";
 
             connection = new SqliteConnection(connectionString);
 

@@ -128,30 +128,32 @@ namespace RegistroHoras
             dataGridView1.Rows.Clear();
         }
 
-        //Deletar horario indesejado
-        public void DeleteHorario(DateTime horarioSelecionado)
+
+        //Funcao para deletar uma linha selecionado
+        private void DeletarButton_Click(object sender, EventArgs e)
         {
-            var valorSelecionado = dataGridView1.SelectedRows;
+            // Obtenha a linha da célula atualmente selecionada
+            int linhaSelecionada = dataGridView1.CurrentCell.RowIndex;
+
+
+            var colunaHorarioInicio = dataGridView1.Rows[linhaSelecionada].Cells["horaInicioTextBoxColumn"].Value;
+            var colunaHorarioFim = dataGridView1.Rows[linhaSelecionada].Cells["horaFimTextBoxColumn"].Value;
+
 
             using (var cmd = new SqliteCommand("" +
-                "DELETE FROM RegistroHorario " +
-                "WHERE horarioInicio = @horarioInicio " +
-                "AND horarioFim = @horarioFim", connection))
+                 "DELETE FROM RegistroHorario " +
+                 "WHERE horarioInicio = @horarioInicio " +
+                 "AND horarioFim = @horarioFim", connection))
             {
-                cmd.Parameters.AddWithValue("@horarioInicio", horarioInicio);
-                cmd.Parameters.AddWithValue("@horarioFim", horarioFim);
-
-                using (SqliteDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        // Exiba os dados em uma DataGridView, ListBox, ou qualquer outro controle de exibição que você preferir.
-                        // Por exemplo, se você tem uma DataGridView chamada dataGridView1:
-                        dataGridView1.Rows.Add(
-                            reader["demandaRealizada"], reader["horarioInicio"], reader["horarioFim"], reader["totalHoras"]);
-                    }
-                }
+                cmd.Parameters.AddWithValue("@horarioInicio", colunaHorarioInicio);
+                cmd.Parameters.AddWithValue("@horarioFim", colunaHorarioFim);
+                cmd.ExecuteNonQuery();
+                //Buscar novamente a listagem
             }
+
+            //Trazer novamente a listagem
+            //listarButton_Click();
+
         }
     }
 }

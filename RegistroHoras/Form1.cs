@@ -60,9 +60,6 @@ namespace RegistroHoras
             }
 
             MessageBox.Show("Dados salvos com sucesso!");
-            
-            //carregar informações na tela
-            CarregarDadosRegistroHorario(DateTime.Now);
         }
 
         private void CarregarDadosRegistroHorario(DateTime dataDePesquisa)
@@ -118,9 +115,12 @@ namespace RegistroHoras
 
         private void listarButton_Click(object sender, EventArgs e)
         {
-            LimparFiltrosDataGridView(); 
+            //Zerar a contagem das horas e iniciar novamente
+            totalHorasMinutosSomadas = TimeSpan.Zero;
+
+            LimparFiltrosDataGridView();
+            
             CarregarDadosRegistroHorario(dataListagemDatePicker.Value);
-            //dataListagemDatePicker
         }
 
         private void LimparFiltrosDataGridView()

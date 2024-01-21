@@ -42,6 +42,8 @@
             this.TotalHoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.totalHorasDiaLabel = new System.Windows.Forms.Label();
+            this.dataListagemDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.listarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +120,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.TotalHoras});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 208);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 239);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -157,7 +159,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(721, 208);
+            this.label1.Location = new System.Drawing.Point(721, 239);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 15);
             this.label1.TabIndex = 8;
@@ -166,7 +168,7 @@
             // totalHorasDiaLabel
             // 
             this.totalHorasDiaLabel.AutoSize = true;
-            this.totalHorasDiaLabel.Location = new System.Drawing.Point(831, 208);
+            this.totalHorasDiaLabel.Location = new System.Drawing.Point(830, 239);
             this.totalHorasDiaLabel.Name = "totalHorasDiaLabel";
             this.totalHorasDiaLabel.Size = new System.Drawing.Size(17, 15);
             this.totalHorasDiaLabel.TabIndex = 9;
@@ -174,11 +176,32 @@
             this.totalHorasDiaLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.totalHorasDiaLabel.Click += new System.EventHandler(this.totalHorasDia_Click);
             // 
+            // dataListagemDatePicker
+            // 
+            this.dataListagemDatePicker.CustomFormat = "dd-MM-yyyy HH:mm";
+            this.dataListagemDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dataListagemDatePicker.Location = new System.Drawing.Point(23, 198);
+            this.dataListagemDatePicker.Name = "dataListagemDatePicker";
+            this.dataListagemDatePicker.Size = new System.Drawing.Size(200, 23);
+            this.dataListagemDatePicker.TabIndex = 10;
+            // 
+            // listarButton
+            // 
+            this.listarButton.Location = new System.Drawing.Point(257, 198);
+            this.listarButton.Name = "listarButton";
+            this.listarButton.Size = new System.Drawing.Size(75, 23);
+            this.listarButton.TabIndex = 11;
+            this.listarButton.Text = "Listar";
+            this.listarButton.UseVisualStyleBackColor = true;
+            this.listarButton.Click += new System.EventHandler(this.listarButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 450);
+            this.Controls.Add(this.listarButton);
+            this.Controls.Add(this.dataListagemDatePicker);
             this.Controls.Add(this.totalHorasDiaLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -213,5 +236,7 @@
         private DataGridViewTextBoxColumn TotalHoras;
         private Label label1;
         private Label totalHorasDiaLabel;
+        private DateTimePicker dataListagemDatePicker;
+        private Button listarButton;
     }
 }

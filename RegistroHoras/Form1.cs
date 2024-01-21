@@ -1,4 +1,5 @@
 using Microsoft.Data.Sqlite;
+using System.Data;
 
 namespace RegistroHoras
 {
@@ -10,7 +11,7 @@ namespace RegistroHoras
         {
             InitializeComponent();
             InicializarBD();
-            CarregarDadosRegistroHorario();
+            CarregarDadosRegistroHorario(DateTime.Now);
         }
 
 
@@ -61,17 +62,18 @@ namespace RegistroHoras
             MessageBox.Show("Dados salvos com sucesso!");
             
             //carregar informações na tela
-            CarregarDadosRegistroHorario();
+            CarregarDadosRegistroHorario(DateTime.Now);
         }
 
-        private void CarregarDadosRegistroHorario()
+        private void CarregarDadosRegistroHorario(DateTime dataDePesquisa)
         {
-
+            
+            var anoMesDia = dataDePesquisa.ToString("yyyy-MM-dd");
             TimeSpan totalHoras = TimeSpan.Zero;  // Variável para armazenar o total de horas
 
             using (var cmd = new SqliteCommand("SELECT * FROM RegistroHorario where Date(horarioInicio) = @horarioInicio", connection))
             {
-                cmd.Parameters.AddWithValue("@horarioInicio", DateTime.Now.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@horarioInicio", anoMesDia);
 
                 using (SqliteDataReader reader = cmd.ExecuteReader())
                 {
@@ -95,7 +97,6 @@ namespace RegistroHoras
 
         public TimeSpan SomarTotalHoras(object totalHorasObject)
         {
-            
             var totalHorasDateTime = Convert.ToDateTime(totalHorasObject);
             //transformar em horas e minutos
             totalHorasMinutosSomadas += totalHorasDateTime.TimeOfDay;
@@ -113,6 +114,18 @@ namespace RegistroHoras
         private void totalHorasDia_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void listarButton_Click(object sender, EventArgs e)
+        {
+            LimparFiltrosDataGridView(); 
+            CarregarDadosRegistroHorario(dataListagemDatePicker.Value);
+            //dataListagemDatePicker
+        }
+
+        private void LimparFiltrosDataGridView()
+        {
+            dataGridView1.Rows.Clear();
         }
     }
 }

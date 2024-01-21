@@ -14,7 +14,6 @@ namespace RegistroHoras
             CarregarDadosRegistroHorario(DateTime.Now);
         }
 
-
         public void InicializarBD()
         {
             // Obtenha o diretório base do aplicativo (onde o executável está localizado)
@@ -91,7 +90,6 @@ namespace RegistroHoras
 
                         //FUNCAO SOMAR TODOS OS TOTAIS DE HORA DAQUELE DIA
                         totalHoras = SomarTotalHoras(reader["totalHoras"]);
-
                     }
                 }
             }
@@ -142,7 +140,7 @@ namespace RegistroHoras
             // Obtenha a linha da célula atualmente selecionada
             int linhaSelecionada = dataGridView1.CurrentCell.RowIndex;
 
-
+            //Pegar informação da coluna selecionada
             var colunaHorarioInicio = dataGridView1.Rows[linhaSelecionada].Cells["horaInicioTextBoxColumn"].Value;
             var colunaHorarioFim = dataGridView1.Rows[linhaSelecionada].Cells["horaFimTextBoxColumn"].Value;
 
@@ -155,13 +153,11 @@ namespace RegistroHoras
                 cmd.Parameters.AddWithValue("@horarioInicio", colunaHorarioInicio);
                 cmd.Parameters.AddWithValue("@horarioFim", colunaHorarioFim);
                 cmd.ExecuteNonQuery();
-                //Buscar novamente a listagem
+                
             }
 
-            object obj = new object { };
-            //Trazer novamente a listagem
+            //Buscar novamente a listagem
             listarButton_Click(new object { }, new EventArgs());
-
         }
     }
 }
